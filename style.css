@@ -2086,7 +2086,7 @@ button {
 
     .section-heading h2 {
 
-        font-size: clamp(4rem, 17vw, 7rem);
+        font-size: clamp(3rem, 14vw, 6rem);
 
         letter-spacing: -4px;
     }
@@ -2151,6 +2151,24 @@ button {
         margin-top: 50px;
     }
 
+    .location-symbol {
+        position: absolute;
+    }
+
+    .location-symbol span {
+        position: fixed;
+        left: 50%;
+        top: 75%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+
+    .location-symbol tarragona-description {
+        position: relative;
+        z-index: 1;
+        margin-top: -11rem;
+    }
+
 
 
     /* ARCHIVE */
@@ -2158,6 +2176,10 @@ button {
     .archive {
 
         padding-bottom: 100px;
+    }
+
+    .archive-header h2{
+        font-size: clamp(3rem, 14vw, 6rem);
     }
 
 
