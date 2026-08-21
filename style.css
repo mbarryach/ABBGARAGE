@@ -1870,7 +1870,7 @@ button {
     /* LOGO */
 
     .logo {
-        height: 3rem;
+        height: 4rem;
         width: auto;
     }
 
@@ -1878,7 +1878,7 @@ button {
 
     .header {
 
-        padding: 30px 5%;
+        padding: 20px 5% 60px;
     }
 
 
@@ -1914,7 +1914,7 @@ button {
 
     .nav a {
 
-        font-size: 1rem;
+        font-size: .7rem;
     }
 
 
@@ -1953,6 +1953,11 @@ button {
     }
 
 
+    .hero-content {
+
+        padding-top: 0px;
+    }
+
     .hero-bottom {
 
         align-items: flex-start;
@@ -1981,7 +1986,6 @@ button {
 
         bottom: 0;
     }
-
 
 
     /* FESTIVITY */
@@ -2120,7 +2124,7 @@ button {
 
     .tarragona-line {
 
-        margin-top: 50px;
+        margin-top: 0px;
     }
 
     .location-symbol {
