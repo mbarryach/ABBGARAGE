@@ -1,0 +1,2274 @@
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --black: #0b0b0b;
+
+    --black-soft: #151515;
+
+    --white: #f4f1e9;
+
+    --white-pure: #ffffff;
+
+    --red: #8f1d2c;
+
+    --red-bright: #b52a3c;
+
+    --red-dark: #64141f;
+
+    --gray: #88847e;
+
+    --gray-light: #d7d2c8;
+
+    --border: rgba(11, 11, 11, .18);
+
+    --font-display:
+        "Archivo Black",
+        sans-serif;
+
+    --font-body:
+        "Inter",
+        sans-serif;
+
+    --font-mono:
+        "DM Mono",
+        monospace;
+
+    --max-width: 1400px;
+
+}
+
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    background: var(--white);
+
+    color: var(--black);
+
+    font-family: var(--font-body);
+
+    overflow-x: hidden;
+}
+
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+button {
+
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+
+    position: absolute;
+
+    z-index: 100;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 28px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: white;
+
+}
+
+
+.logo {
+
+    font-family: var(--font-display);
+
+    font-size: 1.35rem;
+
+    letter-spacing: -1px;
+}
+
+
+.logo span {
+
+    color: var(--red-bright);
+
+}
+
+
+.nav {
+
+    display: flex;
+
+    gap: 38px;
+}
+
+
+.nav a {
+
+    position: relative;
+
+    font-size: .68rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: white;
+
+    transition: width .3s ease;
+}
+
+
+.nav a:hover::after {
+
+    width: 100%;
+}
+
+
+.menu-button {
+
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.menu-button span {
+
+    display: block;
+
+    width: 27px;
+
+    height: 2px;
+
+    background: white;
+
+    margin: 5px;
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: var(--black-soft);
+
+    color: white;
+}
+
+
+.hero-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.94) 0%,
+            rgba(0,0,0,.70) 20%,
+            rgba(0,0,0,.35) 100%
+        ),
+
+        url("images/Bandera_de_Tarragona.svg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(var(--max-width), 90%);
+
+    margin: auto;
+
+    padding-top: 70px;
+}
+
+
+.hero-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    max-width: 600px;
+
+    margin-bottom: 70px;
+
+    font-family: var(--font-mono);
+
+    font-size: .62rem;
+
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,.7);
+}
+
+
+.hero h1 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(5rem, 14vw, 13rem);
+
+    line-height: .75;
+
+    letter-spacing: -8px;
+
+    margin: 30px 0 50px;
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: var(--red-bright);
+
+    margin-left: 8vw;
+}
+
+
+.hero-bottom {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+.hero-bottom p {
+
+    max-width: 280px;
+
+    font-size: .85rem;
+
+    line-height: 1.7;
+
+    color: rgba(255,255,255,.7);
+}
+
+
+.hero-year {
+
+    position: absolute;
+
+    z-index: 2;
+
+    right: -20px;
+
+    bottom: -35px;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(8rem, 25vw, 25rem);
+
+    line-height: .8;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(255,255,255,.12);
+
+    user-select: none;
+}
+
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 17px 23px;
+
+    background: var(--black);
+
+    color: white;
+
+    border: 1px solid var(--black);
+
+    font-size: .66rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.button:hover {
+
+    background: transparent;
+
+    color: var(--black);
+
+    transform: translateY(-3px);
+}
+
+
+.button-light {
+
+    background: white;
+
+    color: var(--black);
+
+    border-color: white;
+}
+
+
+.button-light:hover {
+
+    background: var(--red);
+
+    color: white;
+
+    border-color: var(--red);
+
+}
+
+
+
+/* =====================================================
+   FESTIVITY STRIP
+===================================================== */
+
+.festivity-strip {
+
+    min-height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    overflow: hidden;
+
+    background: var(--red);
+
+    color: white;
+
+    font-family: var(--font-mono);
+
+    font-size: .62rem;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+
+.festivity-strip span {
+
+    opacity: .5;
+
+}
+
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+.intro,
+.products-section,
+.tarragona,
+.archive,
+.contact {
+
+    width: min(var(--max-width), 90%);
+
+    margin: auto;
+}
+
+
+.section-label {
+
+    display: flex;
+
+    gap: 14px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-family: var(--font-mono);
+
+    font-size: .62rem;
+
+    letter-spacing: 2px;
+}
+
+
+.section-label span {
+
+    color: var(--red);
+
+}
+
+
+.small-title {
+
+    font-family: var(--font-mono);
+
+    font-size: .65rem;
+
+    letter-spacing: 2px;
+
+    color: var(--gray);
+
+}
+
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+
+    padding-top: 150px;
+
+    padding-bottom: 140px;
+}
+
+
+.intro-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    gap: 100px;
+
+    margin-top: 70px;
+
+    background-image: url("images/catedral_de_tarragona.svg");
+    background-repeat: no-repeat;
+    background-size: 40rem;
+    background-position: 80% center;
+
+    height: 35rem;
+}
+
+
+.intro h2 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(4.5rem, 9vw, 10rem);
+
+    line-height: .78;
+
+    letter-spacing: -6px;
+
+    margin-top: 25px;
+}
+
+
+.intro h2 span {
+
+    display: block;
+
+    color: var(--red);
+
+    margin-left: 5vw;
+}
+
+
+.intro-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    margin-bottom: 8rem;
+}
+
+
+.intro-text > p {
+
+    max-width: 440px;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.products-section {
+
+    padding-bottom: 160px;
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 65px;
+}
+
+
+.section-heading h2 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(4rem, 9vw, 9rem);
+
+    line-height: .78;
+
+    letter-spacing: -6px;
+
+    margin-top: 22px;
+}
+
+
+.collection-number {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-family: var(--font-mono);
+
+    font-size: .6rem;
+
+    letter-spacing: 1px;
+}
+
+
+.collection-number span {
+
+    color: var(--red);
+
+    font-size: 1.3rem;
+}
+
+
+.products-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 75px 25px;
+}
+
+.mocador_totebag_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+}
+
+.mocador_totebag_grid > :first-child {
+    grid-row: 1 / 3;
+}
+
+.mocador_totebag_grid .product-image {
+    aspect-ratio: auto;
+    height: 100%;
+}
+
+
+.product-card {
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+
+.product-card:focus-visible {
+
+    outline: 2px solid var(--red);
+
+    outline-offset: 7px;
+}
+
+
+.product-image {
+
+    position: relative;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    background: #d9d5cd;
+}
+
+
+.product-main-image {
+
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+
+.product-card:hover .product-main-image {
+
+    transform: scale(1.045);
+}
+
+
+.product-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            transparent 45%,
+            rgba(0,0,0,.65)
+        );
+
+    color: white;
+
+    opacity: 0;
+
+    transition: opacity .4s ease;
+}
+
+
+.product-card:hover .product-overlay,
+.product-card:focus-visible .product-overlay {
+
+    opacity: 1;
+}
+
+
+.product-overlay span {
+
+    font-family: var(--font-mono);
+
+    font-size: .58rem;
+
+    letter-spacing: 1px;
+}
+
+
+.product-overlay div {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid white;
+
+    border-radius: 50%;
+
+    font-size: 1.2rem;
+}
+
+
+.product-index {
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 18px;
+
+    padding: 8px 10px;
+
+    background: var(--white);
+
+    font-family: var(--font-mono);
+
+    font-size: .58rem;
+}
+
+
+.product-info {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    padding-top: 18px;
+}
+
+
+.product-info p {
+
+    font-family: var(--font-mono);
+
+    font-size: .55rem;
+
+    letter-spacing: 1px;
+
+    color: var(--gray);
+
+    margin-bottom: 7px;
+}
+
+
+.product-info h3 {
+
+    font-size: 1rem;
+
+    font-weight: 800;
+}
+
+
+.product-info strong {
+
+    font-family: var(--font-mono);
+
+    font-size: .85rem;
+}
+
+
+
+/* =====================================================
+   STATEMENT
+===================================================== */
+.statement {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 0;
+}
+
+.statement-content {
+    padding: 100px 20px;
+}
+
+.statement-content > span {
+    font-family: var(--font-mono);
+    font-size: .6rem;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,.7);
+}
+
+.statement h2 {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 11vw, 12rem);
+    line-height: .75;
+    letter-spacing: -7px;
+    margin: 35px 0;
+}
+
+.statement h2 em {
+    color: var(--red-bright);
+    font-style: normal;
+}
+
+.statement-content > p {
+    font-family: var(--font-mono);
+    font-size: .6rem;
+    letter-spacing: 2px;
+}
+
+.statement-image-bottom {
+    display: block;
+    width: 100%;
+    height: 180px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   TARRAGONA
+===================================================== */
+
+.tarragona {
+
+    padding-top: 150px;
+
+    padding-bottom: 150px;
+}
+
+
+.tarragona-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    margin-top: 75px;
+}
+
+
+.tarragona-title h2 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(4rem, 8vw, 9rem);
+
+    line-height: .78;
+
+    letter-spacing: -6px;
+
+    margin-top: 25px;
+}
+
+
+.tarragona-title h2 span {
+
+    display: block;
+
+    color: var(--red);
+
+    margin-left: 4vw;
+}
+
+
+.tarragona-copy {
+
+    max-width: 450px;
+
+    align-self: end;
+}
+
+
+.location-symbol {
+    width: 120px;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 45px;
+
+    font-family: var(--font-display);
+
+    font-size: 8rem;
+
+    color: transparent;
+
+    -webkit-text-stroke: 2px rgba(27, 24, 24, 0.147);
+}
+
+.tarragona-copy p {
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+.tarragona-line {
+
+    display: flex;
+
+    justify-content: space-between;
+    margin-bottom: 25px;
+    border-top: 1px solid var(--border);
+
+    font-family: var(--font-mono);
+
+    font-size: .70rem;
+
+    letter-spacing: 2px;
+
+    color: var(--gray);
+}
+
+
+
+/* =====================================================
+   ARCHIVE
+===================================================== */
+
+.archive {
+
+    padding-bottom: 160px;
+}
+
+
+.archive-header {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    margin-top: 75px;
+
+    margin-bottom: 70px;
+}
+
+
+.archive-header h2 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(4rem, 8vw, 9rem);
+
+    line-height: .78;
+
+    letter-spacing: -6px;
+
+    margin-top: 25px;
+}
+
+
+.archive-header h2 span {
+
+    display: block;
+
+    color: var(--red);
+
+    margin-left: 4vw;
+}
+
+
+.archive-copy {
+
+    align-self: end;
+
+    max-width: 400px;
+}
+
+
+.archive-copy p {
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+.archive-copy span {
+
+    font-family: var(--font-mono);
+
+    font-size: .58rem;
+
+    letter-spacing: 2px;
+
+    color: var(--red);
+}
+
+
+.year-filter {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 35px;
+}
+
+
+.year-button {
+
+    padding: 12px 20px;
+
+    background: transparent;
+
+    border: 1px solid #aaa;
+
+    font-family: var(--font-mono);
+
+    font-size: .58rem;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease;
+}
+
+
+.year-button:hover,
+.year-button.active {
+
+    background: var(--black);
+
+    color: white;
+
+    border-color: var(--black);
+}
+
+
+.archive-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.archive-card {
+
+    cursor: pointer;
+}
+
+
+.archive-card.hidden {
+
+    display: none;
+}
+
+
+.archive-image {
+
+    position: relative;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    background: #ddd;
+}
+
+
+.archive-image img {
+
+    transition: transform .7s ease;
+}
+
+
+.archive-card:hover .archive-image img {
+
+    transform: scale(1.05);
+}
+
+
+.archive-year {
+
+    position: absolute;
+
+    left: 15px;
+
+    bottom: 15px;
+
+    padding: 8px 12px;
+
+    background: var(--white);
+
+    font-family: var(--font-mono);
+
+    font-size: .6rem;
+}
+
+
+.archive-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 15px;
+}
+
+
+.archive-info h3 {
+
+    font-size: .85rem;
+
+    font-weight: 800;
+}
+
+
+.archive-info span {
+
+    font-family: var(--font-mono);
+
+    font-size: .5rem;
+
+    letter-spacing: 1px;
+
+    color: var(--gray);
+}
+
+
+
+/* =====================================================
+   CONTACTE
+===================================================== */
+
+.contact {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    padding-bottom: 160px;
+}
+
+
+.contact-left h2 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(4rem, 9vw, 10rem);
+
+    line-height: .78;
+
+    letter-spacing: -7px;
+
+    margin-top: 55px;
+}
+
+
+.contact-left h2 span {
+
+    display: block;
+
+    color: var(--red);
+
+    margin-left: 5vw;
+}
+
+
+.contact-right {
+
+    align-self: end;
+
+    max-width: 430px;
+}
+
+
+.contact-right > p {
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    background: var(--black);
+
+    color: white;
+
+    padding: 45px 5% 25px;
+}
+
+
+.footer-top {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    padding-bottom: 50px;
+}
+
+
+.footer-logo {
+
+    font-family: var(--font-display);
+
+    font-size: 1.4rem;
+
+    letter-spacing: -1px;
+}
+
+
+.footer-logo span {
+
+    color: var(--red-bright);
+}
+
+
+.footer-location {
+
+    text-align: center;
+
+    font-family: var(--font-mono);
+
+    font-size: .55rem;
+
+    line-height: 1.8;
+
+    letter-spacing: 2px;
+
+    color: #aaa;
+}
+
+
+.footer-year {
+
+    text-align: right;
+
+    font-family: var(--font-display);
+
+    font-size: 2rem;
+}
+
+
+.footer-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,.15);
+
+    font-family: var(--font-mono);
+
+    font-size: .5rem;
+
+    letter-spacing: 1.5px;
+
+    color: #777;
+}
+
+
+.footer-credit {
+
+    margin-top: 18px;
+
+    text-align: center;
+}
+
+
+.footer-credit p {
+
+    font-family: var(--font-mono);
+
+    font-size: .5rem;
+
+    letter-spacing: 1px;
+
+    color: #555;
+}
+
+
+.footer-credit a {
+
+    color: #888;
+
+    text-decoration: underline;
+
+    text-underline-offset: 2px;
+
+    transition: color .3s ease;
+}
+
+
+.footer-credit a:hover {
+
+    color: var(--red-bright);
+}
+
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+}
+
+
+.modal.active {
+
+    display: flex;
+}
+
+
+.modal-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.86);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.modal-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1100px, 100%);
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    background: var(--white);
+
+    animation: modalIn .4s cubic-bezier(.2,.7,.2,1);
+}
+
+
+@keyframes modalIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px) scale(.98);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+
+    }
+
+}
+
+
+.modal-close {
+
+    position: absolute;
+
+    z-index: 20;
+
+    top: 15px;
+
+    right: 15px;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    background: var(--white);
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.modal-close:hover {
+
+    background: var(--red);
+
+    color: white;
+}
+
+
+
+/* =====================================================
+   GALERIA MODAL
+===================================================== */
+
+.modal-gallery {
+
+    background: #dedbd4;
+
+    padding: 25px;
+
+    min-width: 0;
+}
+
+
+.modal-main-image {
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    background: #ddd;
+}
+
+
+.modal-main-image img {
+
+    transition: opacity .2s ease;
+}
+
+
+.gallery-thumbnails {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+
+.gallery-thumbnail {
+
+    position: relative;
+
+    aspect-ratio: 1 / 1;
+
+    padding: 0;
+
+    border: 2px solid transparent;
+
+    overflow: hidden;
+
+    background: #ccc;
+
+    cursor: pointer;
+
+    opacity: .65;
+
+    transition:
+        opacity .2s ease,
+        border-color .2s ease;
+}
+
+
+.gallery-thumbnail:hover {
+
+    opacity: 1;
+}
+
+
+.gallery-thumbnail.active {
+
+    opacity: 1;
+
+    border-color: var(--red);
+}
+
+
+.gallery-thumbnail img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+
+/* =====================================================
+   INFO MODAL
+===================================================== */
+
+.modal-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 65px;
+}
+
+
+.modal-category {
+
+    font-family: var(--font-mono);
+
+    font-size: .56rem;
+
+    letter-spacing: 1.5px;
+
+    color: var(--gray);
+
+    margin-bottom: 25px;
+}
+
+
+.modal-info h2 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(3rem, 5vw, 5.5rem);
+
+    line-height: .8;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 25px;
+}
+
+
+.modal-price {
+
+    font-family: var(--font-mono);
+
+    font-size: 1.2rem;
+
+    margin-bottom: 35px;
+}
+
+
+.modal-price span {
+
+    color: var(--red);
+}
+
+
+.modal-description {
+
+    max-width: 390px;
+
+    color: #666;
+
+    font-size: .9rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+.modal-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 35px;
+}
+
+
+.modal-detail {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-family: var(--font-mono);
+
+    font-size: .55rem;
+
+    letter-spacing: .5px;
+}
+
+
+.modal-detail span:last-child {
+
+    color: var(--gray);
+}
+
+
+.modal-button {
+
+    align-self: flex-start;
+}
+
+
+.modal-note {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+    font-family: var(--font-mono);
+
+    font-size: .48rem;
+
+    line-height: 1.5;
+
+    letter-spacing: 1px;
+
+    color: #999;
+}
+
+
+.modal-note span {
+
+    color: var(--red);
+}
+
+
+
+/* =====================================================
+   ANIMACIONS SCROLL (GSAP / ScrollTrigger)
+===================================================== */
+
+/*
+    Ja no fem servir transitions CSS ni la classe
+    .is-visible: GSAP s'encarrega de l'estat inicial
+    (gsap.set) i de l'animació d'entrada quan l'element
+    entra al viewport. Deixem-ho preparat perquè, si per
+    algun motiu JS no carrega, els elements igualment
+    es vegin (no els amaguem per CSS).
+*/
+
+.gsap-ready .product-card,
+.gsap-ready .archive-card,
+.gsap-ready .intro-grid,
+.gsap-ready .tarragona-grid,
+.gsap-ready .contact,
+.gsap-ready .section-label,
+.gsap-ready .section-heading,
+.gsap-ready .statement-content {
+
+    will-change: transform, opacity;
+}
+
+
+
+/* =====================================================
+   HEADER AMB SCROLL
+===================================================== */
+
+.header {
+
+    transition: background .4s ease, padding .4s ease;
+}
+
+
+.header.is-scrolled {
+
+    background: rgba(11,11,11,.82);
+
+    backdrop-filter: blur(10px);
+
+    padding-top: 18px;
+
+    padding-bottom: 18px;
+}
+
+
+
+/* =====================================================
+   MARQUEE (FESTIVITY STRIP)
+===================================================== */
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    background: #8f1d2c;
+    color: white;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+
+    animation: scroll 15s linear infinite;
+}
+
+.marquee-track span {
+    flex-shrink: 0;
+
+    padding: 20px 0;
+    padding-right: 50px;
+
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+@keyframes scroll {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+
+
+/* =====================================================
+   MAGNETIC (BOTONS)
+===================================================== */
+
+.magnetic-active {
+
+    transition: background .3s ease, color .3s ease, border-color .3s ease;
+}
+
+
+
+/* =====================================================
+   STATEMENT · BRILLANTOR "S'ENCÉN"
+===================================================== */
+
+.statement h2 em {
+
+    display: inline-block;
+
+    text-shadow: 0 0 0 rgba(181,42,60,0);
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+
+
+    /* HEADER */
+
+    .header {
+
+        padding: 22px 5%;
+    }
+
+
+    .nav {
+
+        position: fixed;
+
+        inset: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 30px;
+
+        background: var(--black);
+
+        transform: translateX(100%);
+
+        transition: transform .4s ease;
+    }
+
+
+    .nav.active {
+
+        transform: translateX(0);
+    }
+
+
+    .nav a {
+
+        font-size: 1rem;
+    }
+
+
+    .menu-button {
+
+        display: block;
+
+        position: relative;
+
+        z-index: 110;
+    }
+
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height: 90vh;
+    }
+
+
+    .hero-top {
+
+        margin-bottom: 50px;
+    }
+
+
+    .hero h1 {
+
+        font-size: clamp(4.5rem, 20vw, 8rem);
+
+        letter-spacing: -5px;
+
+        margin: 25px 0 40px;
+    }
+
+
+    .hero-bottom {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+
+    .hero-decoration-1 {
+
+        right: 5%;
+
+        top: 40%;
+
+        font-size: 4rem;
+    }
+
+
+    .hero-year {
+
+        font-size: 35vw;
+
+        right: -5px;
+
+        bottom: 0;
+    }
+
+
+
+    /* FESTIVITY */
+
+    .festivity-strip {
+
+        justify-content: flex-start;
+
+        gap: 20px;
+
+        padding: 0 20px;
+    }
+
+
+
+    /* GENERAL */
+
+    .intro,
+    .products-section,
+    .tarragona,
+    .archive {
+
+        width: 90%;
+    }
+
+
+    .intro {
+
+        padding-top: 100px;
+
+        padding-bottom: 100px;
+    }
+
+
+    .intro-grid,
+    .tarragona-grid,
+    .archive-header,
+    .contact {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .intro h2,
+    .tarragona-title h2,
+    .archive-header h2 {
+
+        font-size: clamp(4rem, 18vw, 7rem);
+
+        letter-spacing: -4px;
+    }
+
+
+
+    /* PRODUCTES */
+
+    .products-section {
+
+        padding-bottom: 100px;
+    }
+
+
+    .section-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+
+    .section-heading h2 {
+
+        font-size: clamp(4rem, 17vw, 7rem);
+
+        letter-spacing: -4px;
+    }
+
+
+    .products-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .product-overlay {
+
+        opacity: 1;
+
+        background:
+            linear-gradient(
+                transparent 55%,
+                rgba(0,0,0,.55)
+            );
+    }
+
+    .mocador_totebag_grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+
+    /* STATEMENT */
+
+    .statement {
+
+        min-height: 65vh;
+    }
+
+
+    .statement h2 {
+
+        font-size: clamp(4rem, 17vw, 8rem);
+
+        letter-spacing: -5px;
+    }
+
+
+
+    /* TARRAGONA */
+
+    .tarragona {
+
+        padding-top: 100px;
+
+        padding-bottom: 100px;
+    }
+
+
+    .tarragona-line {
+
+        margin-top: 50px;
+    }
+
+
+
+    /* ARCHIVE */
+
+    .archive {
+
+        padding-bottom: 100px;
+    }
+
+
+    .archive-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .year-filter {
+
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+    }
+
+
+    .year-button {
+
+        flex-shrink: 0;
+    }
+
+
+
+    /* CONTACT */
+
+    .contact {
+
+        padding-bottom: 100px;
+    }
+
+
+    .contact-left h2 {
+
+        font-size: clamp(4rem, 18vw, 8rem);
+
+        letter-spacing: -5px;
+    }
+
+
+
+    /* FOOTER */
+
+    .footer-top {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .footer-location,
+    .footer-year {
+
+        text-align: left;
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+
+    /* MODAL */
+
+    .modal {
+
+        padding: 10px;
+    }
+
+
+    .modal-content {
+
+        grid-template-columns: 1fr;
+
+        max-height: 94vh;
+    }
+
+
+    .modal-gallery {
+
+        padding: 12px;
+    }
+
+
+    .modal-main-image {
+
+        aspect-ratio: 1 / 1;
+    }
+
+
+    .modal-info {
+
+        padding: 35px 25px;
+    }
+
+
+    .modal-info h2 {
+
+        font-size: 3rem;
+
+        letter-spacing: -2px;
+    }
+
+
+    .modal-note {
+
+        margin-top: 25px;
+    }
+
+}
