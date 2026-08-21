@@ -1867,6 +1867,12 @@ button {
 
 @media (max-width: 850px) {
 
+    /* LOGO */
+
+    .logo {
+        height: 3rem;
+        width: auto;
+    }
 
     /* HEADER */
 
