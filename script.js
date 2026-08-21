@@ -42,38 +42,38 @@ const products = {
 
 
     /* =================================================
-       SAMARRETA GRANATE
+       SAMARRETA burdeus
     ================================================== */
 
-    "samarreta-granate": {
+    "samarreta-burdeus": {
 
-        title: "Samarreta granate",
+        title: "Samarreta burdeus",
         price: "12€",
-        description: "Samarreta granate de la col·lecció ABB Garage · Santa Tecla 2026.",
+        description: "Samarreta burdeus de la col·lecció ABB Garage · Santa Tecla 2026.",
 
         details: [
-            { label: "COLOR", value: "Granate" },
+            { label: "COLOR", value: "Burdeus" },
             { label: "EDICIÓ", value: "Santa Tecla 2026" },
             { label: "PREU", value: "12€" }
         ],
 
         images: [
-            { src: "images/productes/samarreta_granate_davant.png", label: "Davant" },
-            { src: "images/productes/samarreta_granate_darrere.png", label: "Darrere" }
+            { src: "images/productes/samarreta_burdeus_davant.png", label: "Davant" },
+            { src: "images/productes/samarreta_burdeus_darrere.png", label: "Darrere" }
         ]
 
     },
 
 
     /* =================================================
-       MOCADOR
+       MOCADOR OFFENDER
     ================================================== */
 
-    "mocador": {
+    "mocador-offender": {
 
-        title: "Mocador",
+        title: "Mocador Offender",
         price: "3€",
-        description: "Mocador de la col·lecció ABB Garage · Santa Tecla 2026.",
+        description: "Mocador Offender de la col·lecció ABB Garage · Santa Tecla 2026.",
 
         details: [
             { label: "TIPUS", value: "Mocador" },
@@ -83,6 +83,29 @@ const products = {
 
         images: [
             { src: "images/productes/mocador_offender.png", label: "Vista principal" }
+        ]
+
+    },
+
+
+    /* =================================================
+       MOCADOR ÀLIGA
+    ================================================== */
+
+    "mocador-aliga": {
+
+        title: "Mocador Àliga",
+        price: "3€",
+        description: "Mocador Àligade la col·lecció ABB Garage · Santa Tecla 2026.",
+
+        details: [
+            { label: "TIPUS", value: "Mocador" },
+            { label: "EDICIÓ", value: "Santa Tecla 2026" },
+            { label: "PREU", value: "3€" }
+        ],
+
+        images: [
+            { src: "images/productes/mocador_aliga.png", label: "Vista principal" }
         ]
 
     },
