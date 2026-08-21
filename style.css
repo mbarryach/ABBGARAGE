@@ -1872,7 +1872,7 @@ button {
 
     .header {
 
-        padding: 45px 5%;
+        padding: 30px 5%;
     }
 
 
@@ -1890,7 +1890,7 @@ button {
 
         justify-content: center;
 
-        gap: 30px;
+        gap: 20px;
 
         background: var(--black);
 
